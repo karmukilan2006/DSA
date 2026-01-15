@@ -9,18 +9,21 @@ class Solution {
 
             int currHeight = (i == n) ? 0 : heights[i];
 
-            while (!stack.isEmpty() && currHeight < heights[stack.peek()]) {
+            while (!stack.isEmpty() && currHeight <= heights[stack.peek()]) 
+            {
 
                 int height = heights[stack.pop()];
                 int width;
-
-                if (stack.isEmpty()) {
+                if (stack.isEmpty()) 
+                {
                     width = i;
-                } else {
+                } 
+                else 
+                {
                     width = i - stack.peek() - 1;
                 }
-
                 maxArea = Math.max(maxArea, height * width);
+
             }
 
             stack.push(i);
