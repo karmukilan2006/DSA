@@ -1,12 +1,26 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int res=0;
-        for(int i=0;i<nums.length;i++)
+        int n=nums.length;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int i=0;i<n;i++) 
         {
-            res^=nums[i];
+            min = Math.min(min, nums[i]);
+            max = Math.max(max, nums[i]);
         }
-        return res;
-        // xor can detect only once apperaing number and if the number are in pair it returns zeroo 
 
+        int[] freq = new int[max-min+1];
+        for (int i=0;i<n;i++) 
+        {
+            freq[nums[i]-min]++;
+        }
+        for (int i=0;i<n;i++) 
+        {
+            if (freq[nums[i]-min]==1) {
+                return nums[i];
+            }
+        }
+
+        return -1;
     }
 }
