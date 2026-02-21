@@ -15,11 +15,11 @@ void solve(int* nums,int numsSize)
 }
 int singleNumber(int* nums, int numsSize) {
     solve(nums,numsSize);
-    for(int i=0;i<numsSize-1;i+=2)
+    for(int i=1;i<numsSize;i+=2)
     {
-        if(nums[i]!=nums[i+1])
+        if(nums[i]!=nums[i-1])
         {
-            return nums[i];
+            return nums[i-1];
         }
     }
     return nums[numsSize-1];
