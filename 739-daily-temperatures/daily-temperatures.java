@@ -5,20 +5,18 @@ class Solution {
         int[] res=new int[n];
         Arrays.fill(res,0);
 
-
         for(int i=0;i<n;i++)
         {
-            int currindex=i;
-            while(!stack.isEmpty() && temperatures[stack.peek()]<temperatures[i])
-            {
-                int index=stack.pop();
-                res[index]=i-index;
-            }
-        
-            if(currindex<n)
-            {
-                stack.push(i);
-            }
+           
+               
+            
+                while(!stack.isEmpty() && temperatures[stack.peek()]<temperatures[i])
+                {
+                    int top=stack.pop();
+                    res[top]=i-top;
+                }
+                 stack.push(i);
+            
         }
         return res;
 
