@@ -7,7 +7,7 @@ int lengthOfLongestSubstring(char* s) {
         int len = 0;
 
         for (int j = i; j < n; j++) {
-            unsigned char c = s[j];  // ensure proper index
+            char c = s[j];  // ensure proper index
             if (seen[c]) {
                 break;  // duplicate found
             }
