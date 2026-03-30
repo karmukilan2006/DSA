@@ -10,40 +10,33 @@
  */
 class Solution {
     public int[] nextLargerNodes(ListNode head) {
-        Stack<Integer> stack=new Stack<>();
-        ListNode dummy1=head;
-        ListNode dummy=head;
-
         int n=0;
-        while(dummy1!=null)
+        ListNode cur=head;
+        while(cur!=null)
         {
             n++;
-            dummy1=dummy1.next;
-            
+            cur=cur.next;  
         }
         int[] res=new int[n];
+        Stack<Integer> stack=new Stack<>();
         int i=0;
-        while(dummy!=null)
+        while(head!=null)
         {
-            while(!stack.isEmpty() && res[stack.peek()]<dummy.val)
+            while(!stack.isEmpty() && res[stack.peek()]<head.val)
             {
-                int index=stack.pop();
-                res[index]=dummy.val;
-                
+                res[stack.pop()]=head.val;
             }
-            res[i]=dummy.val;
+            res[i]=head.val;
+            
             stack.push(i);
-            dummy=dummy.next;
+            head=head.next;
             i++;
         }
         while(!stack.isEmpty())
         {
-            int index=stack.pop();
-            res[index]=0;
+            res[stack.pop()]=0;
         }
         return res;
 
-
-        
     }
 }
