@@ -20,9 +20,7 @@ class Solution {
             slow=slow.next;
             fast=fast.next.next;
         }
-         if(fast != null) {
-            slow = slow.next;
-        }
+        
         slower.next=null;
         ListNode first=head;
         ListNode cur=slow;
@@ -37,7 +35,7 @@ class Solution {
         }
         ListNode second=pre;
 
-        while(second!=null && first!=null)
+        while(first!=null)
         {
             if(first.val!=second.val)
             {
