@@ -21,10 +21,8 @@ class Solution {
             dummy1=dummy1.next;
             
         }
-
         int[] res=new int[n];
         int i=0;
-
         while(dummy!=null)
         {
             while(!stack.isEmpty() && res[stack.peek()]<dummy.val)
