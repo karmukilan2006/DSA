@@ -1,16 +1,18 @@
 class Solution {
     public void reverseString(char[] s) {
-        solve(s,0,s.length-1);
+        int n=s.length;
+        solve(s,n,0);
     }
-    public void solve(char[] s,int l,int r)
+    public void solve(char[] s,int n,int i)
     {
-        if(l>=r)
+        if(i==(n/2))
         {
             return;
         }
-        char ch=s[l];
-        s[l]=s[r];
-        s[r]=ch;
-        solve(s,l+1,r-1);
+        char ch=s[i];
+        s[i]=s[n-i-1];
+        s[n-i-1]=ch;
+
+        solve(s,n,i+1);
     }
 }
