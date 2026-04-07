@@ -7,7 +7,7 @@ class Solution {
             char ch=strs[0].charAt(i);
             for(int j=1;j<n;j++)
             {
-                if(i>=strs[j].length() || strs[j].charAt(i)!=ch)
+                if( i>=strs[j].length() || ch!=strs[j].charAt(i) )
                 {
                     return res;
                 }
