@@ -15,10 +15,8 @@ class Solution {
             res.add(curr);
             return;
         }
-
         for (int i = index; i < nums.length; i++) {
 
-           
             int temp = nums[index];
             nums[index] = nums[i];
             nums[i] = temp;
